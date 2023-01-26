@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+<style>
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, rgb(241, 0, 0), rgb(180, 9, 9));
+    text-align: center;
+    color: #FFF;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1em;
+    border-radius: 10px;
+}
+
+input{
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+button{
+    background-color: rgb(204, 53, 53);
+    color: #FFF;
+    border: none;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px black;
+    cursor: pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+    <main>
+        <form action="{{url_for('calcular')}}" method="POST" enctype="multipart/form-data" class="centralizar">
+        <div class="container">
+            <div class="first-step">
+                <h2>Calculadora</h2>
+                <hr><br>
+                <label for="valorx">Primeiro Número:</label>
+                <input type="number" placeholder="*Digite um número*" name="valorx" id="primeiro numero" required>
+                <br><br>
+                <label for="valory">Segundo Número:</label>
+                <input type="number" placeholder="*Digite um número*" name="valory" id="segundo numero" required>
+                <br><br>
+                <button>Calcular</button>
+            </div><br>
+                <hr>
+        </form>
+        <div class="final-step"></div>
+            <h3>Resultado: {{hipotenusa}}</h3>
+            <button>Finalizar</button>
+        </div>
+        </form>
+    </main>
+</body>
+</html>
